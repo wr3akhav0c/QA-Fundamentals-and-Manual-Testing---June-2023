@@ -1,0 +1,319 @@
+{
+	"info": {
+		"_postman_id": "a1ccc40d-4a2e-4edf-930d-9d7ea3e90df1",
+		"name": "Foody",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28827961"
+	},
+	"item": [
+		{
+			"name": "Methods",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://softuni-qa-loadbalancer-2137572849.eu-north-1.elb.amazonaws.com:86/api/Info/Methods",
+					"protocol": "http",
+					"host": [
+						"softuni-qa-loadbalancer-2137572849",
+						"eu-north-1",
+						"elb",
+						"amazonaws",
+						"com"
+					],
+					"port": "86",
+					"path": [
+						"api",
+						"Info",
+						"Methods"
+					]
+				},
+				"description": "Gets all methods for Foody"
+			},
+			"response": []
+		},
+		{
+			"name": "Create User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userName\": \"havoc\",\r\n    \"firstName\": \"Natalia\",\r\n    \"midName\": \"Ivanova\",\r\n    \"lastName\": \"Dimitrova\",\r\n    \"email\": \"havoc@example.com\",\r\n    \"password\": \"123456\",\r\n    \"rePassword\": \"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://softuni-qa-loadbalancer-2137572849.eu-north-1.elb.amazonaws.com:86/api/User/Create",
+					"protocol": "http",
+					"host": [
+						"softuni-qa-loadbalancer-2137572849",
+						"eu-north-1",
+						"elb",
+						"amazonaws",
+						"com"
+					],
+					"port": "86",
+					"path": [
+						"api",
+						"User",
+						"Create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Authentication (Access Token)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userName\": \"havoc\",\r\n    \"password\": \"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://softuni-qa-loadbalancer-2137572849.eu-north-1.elb.amazonaws.com:86/api/User/Authentication",
+					"protocol": "http",
+					"host": [
+						"softuni-qa-loadbalancer-2137572849",
+						"eu-north-1",
+						"elb",
+						"amazonaws",
+						"com"
+					],
+					"port": "86",
+					"path": [
+						"api",
+						"User",
+						"Authentication"
+					]
+				},
+				"description": "Authenticates a user and retrieves an access token"
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Foods",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJKd3RTZXJ2aWNlQWNjZXNzVG9rZW4iLCJqdGkiOiJiMTE3YTllZC1iYWNiLTRjYTAtOWZlNC1jZmE1ZjEzYTIyZTAiLCJpYXQiOiIwOC8xMC8yMDIzIDE1OjEyOjQ0IiwiVXNlcklkIjoiOGEyM2Y0NjktMTg5YS00ZjVjLTNiZjctMDhkYjk3ZjE3NjE2IiwiRW1haWwiOiJoYXZvY0BleGFtcGxlLmNvbSIsIlVzZXJOYW1lIjoiaGF2b2MiLCJleHAiOjE2OTE3MDE5NjQsImlzcyI6IkZvb2R5X0FwcF9Tb2Z0VW5pIiwiYXVkIjoiRm9vZHlfV2ViQVBJX1NvZnRVbmkifQ.18mWVdEJ2VufHmuzGGQaufLstsEddKtMCiKhqZgYadA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://softuni-qa-loadbalancer-2137572849.eu-north-1.elb.amazonaws.com:86/api/Food/All",
+					"protocol": "http",
+					"host": [
+						"softuni-qa-loadbalancer-2137572849",
+						"eu-north-1",
+						"elb",
+						"amazonaws",
+						"com"
+					],
+					"port": "86",
+					"path": [
+						"api",
+						"Food",
+						"All"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search food",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJKd3RTZXJ2aWNlQWNjZXNzVG9rZW4iLCJqdGkiOiJiMTE3YTllZC1iYWNiLTRjYTAtOWZlNC1jZmE1ZjEzYTIyZTAiLCJpYXQiOiIwOC8xMC8yMDIzIDE1OjEyOjQ0IiwiVXNlcklkIjoiOGEyM2Y0NjktMTg5YS00ZjVjLTNiZjctMDhkYjk3ZjE3NjE2IiwiRW1haWwiOiJoYXZvY0BleGFtcGxlLmNvbSIsIlVzZXJOYW1lIjoiaGF2b2MiLCJleHAiOjE2OTE3MDE5NjQsImlzcyI6IkZvb2R5X0FwcF9Tb2Z0VW5pIiwiYXVkIjoiRm9vZHlfV2ViQVBJX1NvZnRVbmkifQ.18mWVdEJ2VufHmuzGGQaufLstsEddKtMCiKhqZgYadA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://softuni-qa-loadbalancer-2137572849.eu-north-1.elb.amazonaws.com:86/api/Food/Search?keyword=pizza",
+					"protocol": "http",
+					"host": [
+						"softuni-qa-loadbalancer-2137572849",
+						"eu-north-1",
+						"elb",
+						"amazonaws",
+						"com"
+					],
+					"port": "86",
+					"path": [
+						"api",
+						"Food",
+						"Search"
+					],
+					"query": [
+						{
+							"key": "keyword",
+							"value": "pizza"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Food",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJKd3RTZXJ2aWNlQWNjZXNzVG9rZW4iLCJqdGkiOiJiMTE3YTllZC1iYWNiLTRjYTAtOWZlNC1jZmE1ZjEzYTIyZTAiLCJpYXQiOiIwOC8xMC8yMDIzIDE1OjEyOjQ0IiwiVXNlcklkIjoiOGEyM2Y0NjktMTg5YS00ZjVjLTNiZjctMDhkYjk3ZjE3NjE2IiwiRW1haWwiOiJoYXZvY0BleGFtcGxlLmNvbSIsIlVzZXJOYW1lIjoiaGF2b2MiLCJleHAiOjE2OTE3MDE5NjQsImlzcyI6IkZvb2R5X0FwcF9Tb2Z0VW5pIiwiYXVkIjoiRm9vZHlfV2ViQVBJX1NvZnRVbmkifQ.18mWVdEJ2VufHmuzGGQaufLstsEddKtMCiKhqZgYadA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Pizza\",\r\n    \"description\": \"Very tasty pizza\",\r\n    \"url\": \"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://softuni-qa-loadbalancer-2137572849.eu-north-1.elb.amazonaws.com:86/api/Food/Create",
+					"protocol": "http",
+					"host": [
+						"softuni-qa-loadbalancer-2137572849",
+						"eu-north-1",
+						"elb",
+						"amazonaws",
+						"com"
+					],
+					"port": "86",
+					"path": [
+						"api",
+						"Food",
+						"Create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit Food",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJKd3RTZXJ2aWNlQWNjZXNzVG9rZW4iLCJqdGkiOiJiMTE3YTllZC1iYWNiLTRjYTAtOWZlNC1jZmE1ZjEzYTIyZTAiLCJpYXQiOiIwOC8xMC8yMDIzIDE1OjEyOjQ0IiwiVXNlcklkIjoiOGEyM2Y0NjktMTg5YS00ZjVjLTNiZjctMDhkYjk3ZjE3NjE2IiwiRW1haWwiOiJoYXZvY0BleGFtcGxlLmNvbSIsIlVzZXJOYW1lIjoiaGF2b2MiLCJleHAiOjE2OTE3MDE5NjQsImlzcyI6IkZvb2R5X0FwcF9Tb2Z0VW5pIiwiYXVkIjoiRm9vZHlfV2ViQVBJX1NvZnRVbmkifQ.18mWVdEJ2VufHmuzGGQaufLstsEddKtMCiKhqZgYadA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"path\": \"/name\",\r\n        \"op\": \"replace\",\r\n        \"value\": \"Pizza Margarita\"\r\n    }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://softuni-qa-loadbalancer-2137572849.eu-north-1.elb.amazonaws.com:86/api/Food/Edit/8288002d-52ed-455c-e867-08db973b825d",
+					"protocol": "http",
+					"host": [
+						"softuni-qa-loadbalancer-2137572849",
+						"eu-north-1",
+						"elb",
+						"amazonaws",
+						"com"
+					],
+					"port": "86",
+					"path": [
+						"api",
+						"Food",
+						"Edit",
+						"8288002d-52ed-455c-e867-08db973b825d"
+					]
+				},
+				"description": "Edit food by its Id"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Food",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJKd3RTZXJ2aWNlQWNjZXNzVG9rZW4iLCJqdGkiOiJiMTE3YTllZC1iYWNiLTRjYTAtOWZlNC1jZmE1ZjEzYTIyZTAiLCJpYXQiOiIwOC8xMC8yMDIzIDE1OjEyOjQ0IiwiVXNlcklkIjoiOGEyM2Y0NjktMTg5YS00ZjVjLTNiZjctMDhkYjk3ZjE3NjE2IiwiRW1haWwiOiJoYXZvY0BleGFtcGxlLmNvbSIsIlVzZXJOYW1lIjoiaGF2b2MiLCJleHAiOjE2OTE3MDE5NjQsImlzcyI6IkZvb2R5X0FwcF9Tb2Z0VW5pIiwiYXVkIjoiRm9vZHlfV2ViQVBJX1NvZnRVbmkifQ.18mWVdEJ2VufHmuzGGQaufLstsEddKtMCiKhqZgYadA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://softuni-qa-loadbalancer-2137572849.eu-north-1.elb.amazonaws.com:86/api/Food/Delete/8288002d-52ed-455c-e867-08db973b825d",
+					"protocol": "http",
+					"host": [
+						"softuni-qa-loadbalancer-2137572849",
+						"eu-north-1",
+						"elb",
+						"amazonaws",
+						"com"
+					],
+					"port": "86",
+					"path": [
+						"api",
+						"Food",
+						"Delete",
+						"8288002d-52ed-455c-e867-08db973b825d"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
